@@ -1,0 +1,139 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img{
+  height: 135px;
+}
+
+.logo span {
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-login {
+  background-color: #2ecc71;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('../img/festa.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 80px;
+  color: #2ecc71;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+.btn-contact {
+  margin-top: 20px;
+  background-color: #2ecc71;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: #27ae60;
+  cursor: pointer;
+}
+
+.servicos {
+  padding: 60px 40px;
+  background-color: #111;
+  text-align: center;
+}
+
+.servicos h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: #222;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #2ecc71;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+} 
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .hero h2 {
+    font-size: 22px;
+  }
+}

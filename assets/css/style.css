@@ -137,3 +137,75 @@ body {
     font-size: 22px;
   }
 }
+
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav a {
+    margin: 10px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Telas pequenas (smartphones pequenos) */
+@media (max-width: 480px) {
+  .logo img {
+    height: 90px;
+  }
+
+  .btn-contact {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .servicos {
+    padding: 40px 20px;
+  }
+
+  .servicos h2 {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 15px;
+    font-size: 13px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}

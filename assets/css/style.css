@@ -12,8 +12,8 @@ body {
 }
 
 @font-face {
-  font-family: 'Gotham-Bold';
-  src: url('../font/Gotham-Bold.otf');
+  font-family: 'Ethnocentric';
+  src: url('../font/Ethnocentric\ Rg.otf');
 }
 
 @font-face {
@@ -119,9 +119,9 @@ body {
 }
 
 .servicos h2, .aboutUs h2 {
-  font-size: 36px;
+  font-size: 50px;
   margin-bottom: 40px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .cards {
@@ -143,14 +143,14 @@ body {
   font-size: 20px;
   color: #2ecc71;
   margin-bottom: 10px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .card p {
   font-size: 14px;
   line-height: 1.5;
   text-align: start;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .artistas {
@@ -166,17 +166,17 @@ body {
 }
 
 .parceiros h2, .maisVirais h2, .artistas h3{
-  font-size: 45px;
+  font-size: 52px;
   color: #2ecc71;
   margin-bottom: 40px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .artistas h2{
   font-size: 80px;
   color: #2ecc71;
   margin-bottom: 40px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 h2 {
@@ -235,7 +235,7 @@ h2 {
   font-weight: bold;
   color: white;
   font-size: 18px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .artista .spotify-link {
@@ -353,7 +353,8 @@ h2 {
   }
 
   .card h3 {
-    font-size: 18px;
+    font-size: 25px;
+    font-family: Ethnocentric;
   }
 
   .card p {
@@ -371,7 +372,7 @@ h2 {
   font-size: 48px;
   color: #2ecc71;
   margin-bottom: 50px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .galeria-virais {
@@ -431,7 +432,7 @@ h2 {
   font-weight: bold;
   color: white;
   font-size: 18px;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .musica .spotify-link {
@@ -517,10 +518,10 @@ html, body {
 .overlay p {
   color: white !important;
   opacity: 1 !important;
-  font-size: 20px;
+  font-size: 17px;
   max-width: 700px;
   margin: 0 auto;
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .backstage {
@@ -528,7 +529,7 @@ html, body {
   padding: 60px 20px;
   background-color: #111;
   color: #fff; 
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
 }
 
 .backstage h2{
@@ -603,7 +604,7 @@ html, body {
 }
 
 .redes h2{
-  font-family: Gotham-Bold;
+  font-family: Ethnocentric;
   font-size: 40px;
 }
 

@@ -1,4 +1,9 @@
 /* style.css */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -9,6 +14,11 @@ body {
 @font-face {
   font-family: 'Gotham-Bold';
   src: url('../font/Gotham-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Lostar';
+  src: url('../font/Lostar.ttf');
 }
 
 /* Header */
@@ -45,6 +55,13 @@ body {
   border-radius: 4px;
 }
 
+.tituloFunk h2{
+  color: rgb(255, 255, 255);
+  font-family: Lostar;
+  font-size: 90px;
+  margin-bottom: -40px;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -65,17 +82,17 @@ body {
 }
 
 .hero h1 {
-  font-family: 'Anton', sans-serif;
   font-size: 80px;
   color: #2ecc71;
   margin: 0;
 }
 
-.hero h2 {
-  font-size: 30px;
+.hero h3 {
   font-weight: 300;
   margin: 10px 0;
-  font-family: Gotham-Bold;
+  color: #2ecc71;
+  font-family: Lostar;
+  font-size: 90px;
 }
 
 .btn-contact {
@@ -95,13 +112,13 @@ body {
 }
 
 /* Serviços */
-.servicos {
+.servicos{
   padding: 60px 40px;
   background-color: #111;
   text-align: center;
 }
 
-.servicos h2 {
+.servicos h2, .aboutUs h2 {
   font-size: 36px;
   margin-bottom: 40px;
   font-family: Gotham-Bold;
@@ -118,7 +135,7 @@ body {
   background: #222;
   border-radius: 12px;
   padding: 20px;
-  width: 280px;
+  width: 500px;
   text-align: left;
 }
 
@@ -136,15 +153,27 @@ body {
   font-family: Gotham-Bold;
 }
 
-/* Artistas e Patrocinadores */
-.artistas, .parceiros {
+.artistas {
   padding: 60px 40px;
   background-color: #000;
   text-align: center;
 }
 
-.artistas h2, .parceiros h2, .maisVirais h2 {
-  font-size: 36px;
+.parceiros{
+  padding: 60px 40px;
+  background-color: #111;
+  text-align: center;
+}
+
+.parceiros h2, .maisVirais h2, .artistas h3{
+  font-size: 45px;
+  color: #2ecc71;
+  margin-bottom: 40px;
+  font-family: Gotham-Bold;
+}
+
+.artistas h2{
+  font-size: 80px;
   color: #2ecc71;
   margin-bottom: 40px;
   font-family: Gotham-Bold;
@@ -162,7 +191,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
 }
 
 .artista {
@@ -171,8 +200,8 @@ h2 {
   align-items: center;
   background-color: #111;
   border-radius: 12px;
-  padding: 20px;
-  width: 240px;
+  padding: 30px;
+  width: 300px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   transition: transform 0.3s ease;
@@ -192,7 +221,7 @@ h2 {
 .artista img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   transition: transform 0.3s ease;
 }
 
@@ -205,7 +234,7 @@ h2 {
   margin-top: 10px;
   font-weight: bold;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-family: Gotham-Bold;
 }
 
@@ -223,7 +252,6 @@ h2 {
   color: #1ed760;
 }
 
-/* Patrocinadores */
 .logos-parceiros {
   display: flex;
   flex-wrap: wrap;
@@ -236,7 +264,6 @@ h2 {
   height: 150px;
   max-width: 180px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 /* Responsividade */
@@ -341,16 +368,17 @@ h2 {
 }
 
 .maisVirais h2 {
-  font-size: 36px;
+  font-size: 48px;
   color: #2ecc71;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-family: Gotham-Bold;
 }
 
 .galeria-virais {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .maisVirais {
@@ -360,14 +388,14 @@ h2 {
 }
 
 .maisVirais h2 {
-  font-size: 36px;
+  font-size: 46px;
   color: #2ecc71;
   margin-bottom: 40px;
 }
 
 .galeria-virais {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 30px;
 }
@@ -375,8 +403,9 @@ h2 {
 .musica {
   background-color: #111;
   border-radius: 12px;
-  padding: 20px;
-  width: 220px;
+  padding: 30px;
+  width: 22%;
+  min-width: 250px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
@@ -385,8 +414,12 @@ h2 {
 .musica img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   transition: transform 0.3s ease;
+}
+
+.musica:hover {
+  transform: translateY(-5px);
 }
 
 .musica:hover img {
@@ -394,15 +427,20 @@ h2 {
 }
 
 .musica p,a {
+  margin-top: 12px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: white;
+  font-size: 18px;
   font-family: Gotham-Bold;
 }
 
 .musica .spotify-link {
+  display: inline-block;
+  margin-top: 10px;
   color: #1DB954;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
   transition: color 0.3s ease;
 }
 
@@ -440,4 +478,275 @@ h2 {
 
 html, body {
   scroll-behavior: smooth;
+}
+
+
+.aboutUs {
+  position: relative;
+  background-image: url('../img/luckyAboutUs.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.aboutUs::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* escurece o fundo */
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 1rem;
+}
+
+.overlay h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.overlay p {
+  color: white !important;
+  opacity: 1 !important;
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: Gotham-Bold;
+}
+
+.backstage {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #111;
+  color: #fff; 
+  font-family: Gotham-Bold;
+}
+
+.backstage h2{
+  font-size: 50px;
+}
+
+.backstage h3{
+  font-size: 30px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 16px;
+}
+
+/* Efeito de zoom suave ao passar o mouse */
+.carousel-track img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 28px;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-button.prev {
+  left: 20px;
+}
+
+.carousel-button.next {
+  right: 20px;
+}
+
+.redes {
+  background-color: #1c1c1c; /* mesmo tom de cinza usado na seção "Serviços" */
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.redes h2{
+  font-family: Gotham-Bold;
+  font-size: 40px;
+}
+
+.redes {
+  width: 100%;
+  overflow-x: hidden;
+  margin-left: calc(-50vw + 50%); /* corrige o deslocamento lateral */
+  background-color: #1c1c1c;
+  padding: 60px 40px;
+  text-align: center;
+}
+.redesSociais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.redesSociais a img {
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s ease;
+}
+
+.redesSociais a img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .tituloFunk h2 {
+    font-size: 60px;
+    margin-bottom: -20px;
+  }
+
+  .artistas h2 {
+    font-size: 60px;
+  }
+
+  .maisVirais h2 {
+    font-size: 36px;
+  }
+
+  .backstage h2 {
+    font-size: 40px;
+  }
+
+  .backstage h3 {
+    font-size: 24px;
+  }
+
+  .aboutUs {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .overlay h2 {
+    font-size: 28px;
+  }
+
+  .overlay p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero h3 {
+    font-size: 60px;
+  }
+
+  .tituloFunk h2 {
+    font-size: 50px;
+  }
+
+  .backstage h2 {
+    font-size: 36px;
+  }
+
+  .backstage h3 {
+    font-size: 22px;
+  }
+
+  .carousel {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .carousel-button {
+    font-size: 22px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .tituloFunk h2 {
+    font-size: 40px;
+  }
+
+  .hero h3 {
+    font-size: 40px;
+  }
+
+  .aboutUs {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .overlay h2 {
+    font-size: 22px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .carousel-button {
+    font-size: 18px;
+    padding: 6px 10px;
+  }
+
+  .redes h2 {
+    font-size: 28px;
+  }
+
+  .redesSociais a img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn-login {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
 }

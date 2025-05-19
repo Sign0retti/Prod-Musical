@@ -23,7 +23,7 @@
       <a href="#maisVirais">Mais Virais</a>
       <a href="#backstage">Backstage</a>
       <a href="#parceiros">Parceiros</a>
-      <a href="#" class="btn-login">Login</a>
+      <a href="login.html" class="btn-login" id="btnLogin">Login</a>
     </nav>
   </header>
 
@@ -271,6 +271,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', updateSlidePosition);
 });
+
+
+  const btnLogin = document.getElementById('btnLogin');
+
+  btnLogin.addEventListener('click', function (e) {
+    e.preventDefault(); // Impede o redirecionamento imediato
+
+    // Adiciona classe de transição
+    document.body.classList.add('fade-out');
+
+    // Espera 500ms e redireciona
+    setTimeout(() => {
+      window.location.href = 'login.html';
+    }, 500);
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+
 
 </script>
 </body>

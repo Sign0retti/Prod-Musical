@@ -30,8 +30,7 @@
   <section class="hero">
   <div class="hero-content">
     <div class="tituloFunk">
-      <h2>A PRODUTORA Nº1</h2>
-      <h3>DO FUNK</h3><br>
+      <h2>O som que move o baile!</h2><br><br><br>
     </div>
     <a href="https://wa.me/5511959095856" class="btn-contact">CONTATE-NOS</a>
   </div>
@@ -48,15 +47,12 @@ Lucky Group — da quebrada pro mundo, mostrando que o funk é potência, é cul
 
 <section class="spotify" id="spotify">
   <h2>Se é hit, é da Lucky — conheça nossas pedradas!</h2>
-  <div class="albumSpotify">
-    <a href="https://open.spotify.com/playlist/3XTu6ge82ibwBAA50Doptt?si=W8JPh5qqTZm-WVlF3AWfLg&pi=S729E4snRUaN9" 
-       target="_blank" 
-       class="albumLink">
-      <img src="./assets/img/spotify2.png" alt="Capa do álbum no Spotify">
-      <span>Ouça nossa playlist</span>
-    </a>
+  <div id="albumSpotify" class="albumSpotify">
+    <!-- Conteúdo da playlist será carregado aqui via JavaScript -->
   </div>
 </section>
+
+
 
   <section class="servicos" id="servicos">
     <h2>Serviços</h2>
@@ -292,6 +288,95 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  fetch('http://localhost:3000/spotify/playlist')
+  .then(async res => {
+    if (!res.ok) throw new Error('Erro na requisição');
+    const data = await res.json();
+
+    const container = document.getElementById('albumSpotify');
+    
+    // Criar link da playlist com imagem
+    const link = document.createElement('a');
+    link.href = data.external_urls.spotify;
+    link.target = '_blank';
+    link.className = 'albumLink';
+
+    const img = document.createElement('img');
+    img.src = data.images[0].url;
+    img.alt = data.name;
+
+    const span = document.createElement('span');
+    span.textContent = 'Ouça nossa playlist';
+
+    link.appendChild(img);
+    link.appendChild(span);
+    container.appendChild(link);
+
+    // Criar lista com algumas músicas da playlist
+    const listaMusicas = document.createElement('ul');
+    listaMusicas.style.marginTop = '20px';
+    listaMusicas.style.listStyle = 'none';
+    listaMusicas.style.padding = '0';
+
+    data.tracks.items.slice(0, 5).forEach(item => { // só as 5 primeiras músicas
+      const musica = item.track;
+      const li = document.createElement('li');
+      li.style.marginBottom = '10px';
+
+      const musicaLink = document.createElement('a');
+      musicaLink.href = musica.external_urls.spotify;
+      musicaLink.target = '_blank';
+      musicaLink.textContent = `${musica.name} — ${musica.artists.map(a => a.name).join(', ')}`;
+
+      li.appendChild(musicaLink);
+      listaMusicas.appendChild(li);
+    });
+
+    container.appendChild(listaMusicas);
+
+  })
+  .catch(error => {
+    console.error('Erro ao carregar playlist:', error);
+    document.getElementById('albumSpotify').textContent = 'Não foi possível carregar a playlist.';
+  });
+
+  async function carregarPlaylist() {
+    try {
+      const response = await fetch('http://localhost:3000/spotify/playlist');
+      const data = await response.json();
+
+      const container = document.getElementById('playlistContainer');
+      container.innerHTML = '';
+
+      const tracks = data.tracks.items;
+
+      tracks.forEach(item => {
+        const track = item.track;
+        const name = track.name;
+        const albumImage = track.album.images[0].url;
+        const artist = track.artists.map(a => a.name).join(', ');
+        const previewUrl = track.preview_url;
+
+        const card = document.createElement('div');
+        card.className = 'trackCard';
+
+        card.innerHTML = `
+          <img src="${albumImage}" alt="${name}" />
+          <div class="trackInfo">
+            <h3>${name}</h3>
+            <p>${artist}</p>
+            ${previewUrl ? `<audio controls src="${previewUrl}"></audio>` : '<p class="noPreview">Sem prévia disponível</p>'}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar playlist:', error);
+    }
+  }
+
+  carregarPlaylist();
 </script>
 </body>
 </html>

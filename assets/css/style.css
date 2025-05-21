@@ -15,8 +15,8 @@ body {
 }
 
 @font-face {
-  font-family: 'Lostar';
-  src: url('../font/Lostar.ttf');
+  font-family: 'EA Font';
+  src: url('../font/EASPORTS15.ttf');
 }
 
 /* Header */
@@ -55,7 +55,7 @@ body {
 
 .tituloFunk h2{
   color: rgb(255, 255, 255);
-  font-family: Lostar;
+  font-family: EA Font;
   font-size: 90px;
   margin-bottom: -40px;
 }
@@ -88,7 +88,7 @@ body {
   font-weight: 300;
   margin: 10px 0;
   color: #2ecc71;
-  font-family: Lostar;
+  font-family: EA Font;
   font-size: 90px;
 }
 
@@ -118,7 +118,7 @@ body {
 .servicos h2, .aboutUs h2 {
   font-size: 82px;
   margin-bottom: 40px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .cards {
@@ -140,14 +140,14 @@ body {
   font-size: 20px;
   color: #2ecc71;
   margin-bottom: 10px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .card p {
   font-size: 14px;
   line-height: 1.5;
   text-align: start;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .artistas {
@@ -166,14 +166,14 @@ body {
   font-size: 62px;
   color: #2ecc71;
   margin-bottom: 40px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .artistas h2{
   font-size: 80px;
   color: #2ecc71;
   margin-bottom: 40px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 h2 {
@@ -232,7 +232,7 @@ h2 {
   font-weight: bold;
   color: white;
   font-size: 18px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .artista .spotify-link {
@@ -351,7 +351,7 @@ h2 {
 
   .card h3 {
     font-size: 25px;
-    font-family: Ethnocentric;
+    font-family: 'Open Sans';
   }
 
   .card p {
@@ -369,7 +369,7 @@ h2 {
   font-size: 5rem;
   color: #2ecc71;
   margin-bottom: 50px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .galeria-virais {
@@ -419,7 +419,7 @@ h2 {
   font-weight: bold;
   color: white;
   font-size: 18px;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .musica .spotify-link {
@@ -468,7 +468,7 @@ html, body {
   background-color: #000;
   text-align: center;
   color: white;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .spotify h2 {
@@ -575,10 +575,10 @@ html, body {
 .overlay p {
   color: white !important;
   opacity: 1 !important;
-  font-size: 16px;
+  font-size: 25px;
   max-width: 720px;
   margin: 0 auto;
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .backstage {
@@ -586,7 +586,7 @@ html, body {
   padding: 60px 20px;
   background-color: #111;
   color: #fff; 
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
 }
 
 .backstage h2{
@@ -661,7 +661,7 @@ html, body {
 }
 
 .redes h2{
-  font-family: Ethnocentric;
+  font-family: 'Open Sans';
   font-size: 40px;
 }
 
@@ -928,4 +928,182 @@ html, body {
   .logo img {
     height: 70px;
   }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+/* Container principal da seção Spotify */
+.albumSpotify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px 20px;
+  background-color: #121212;
+}
+
+/* Link da playlist/álbum */
+.albumLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #181818;
+  border-radius: 16px;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 260px;
+  box-sizing: border-box;
+}
+
+.albumLink:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagem do álbum ou playlist */
+.albumLink img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Título da playlist */
+.albumLink span {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1DB954;
+  text-align: center;
+  user-select: none;
+}
+
+/* Container para as faixas da playlist (tracks) */
+.playlistContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card individual para cada faixa */
+.trackCard {
+  background-color: #181818;
+  border-radius: 16px;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.trackCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagem da faixa (ex: capa) */
+.trackCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Informação do track: título e artista */
+.trackInfo h3 {
+  font-size: 16px;
+  margin: 8px 0 4px;
+  color: #1DB954;
+}
+
+.trackInfo p {
+  font-size: 14px;
+  margin: 0 0 8px;
+  color: #ccc;
+}
+
+/* Player de áudio */
+audio {
+  width: 100%;
+  outline: none;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+/* Texto para faixas sem preview */
+.noPreview {
+  font-size: 13px;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+  .albumLink,
+  .trackCard {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .albumSpotify,
+  .playlistContainer {
+    padding: 20px 10px;
+    gap: 16px;
+  }
+}
+
+.trackInfo {
+  width: 100%;
+}
+
+.trackInfo h3 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+  color: #1DB954; /* verde Spotify */
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(29, 185, 84, 0.7);
+  letter-spacing: 0.03em;
+}
+
+.trackInfo p {
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: #b3b3b3; /* cinza claro */
+  font-weight: 400;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+
+.trackLyrics {
+  font-size: 13px;
+  color: #ddd;
+  font-style: normal;
+  line-height: 1.5;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-top: 8px;
+  padding-right: 6px;
+}
+
+
+.trackLyrics::-webkit-scrollbar {
+  width: 6px;
+}
+
+.trackLyrics::-webkit-scrollbar-thumb {
+  background-color: #1DB954;
+  border-radius: 3px;
 }

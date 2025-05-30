@@ -1,26 +1,28 @@
-// backend/server.js
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const { sequelize } = require('./models');
+const { PORT, UPLOAD_DIR } = require('./config');
+const path = require('path');
+const fs = require('fs');
+
+const authRoutes = require('./routes/authRoutes');
+const musicRoutes = require('./routes/musicRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
+
+if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR);
+
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, UPLOAD_DIR)));
 
-app.post('/login', (req, res) => {
-  const { usuario, senha } = req.body;
+app.use('/auth', authRoutes);
+app.use('/musicas', musicRoutes);
+app.use('/usuarios', userRoutes);
 
-  // Simulando um banco de dados simples
-  const usuarioFake = 'admin';
-  const senhaFake = '123456';
-
-  if (usuario === usuarioFake && senha === senhaFake) {
-    return res.status(200).json({ mensagem: 'Login bem-sucedido!' });
-  } else {
-    return res.status(401).json({ mensagem: 'Usuário ou senha incorretos.' });
-  }
-});
-
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
 });

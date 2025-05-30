@@ -1,16 +1,37 @@
-require('dotenv').config();
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const authRoutes = require('./routes/authRoutes');
+const sequelize = require('./config/db');
+require('dotenv').config();
+
+const app = express();
 app.use(cors());
+app.use(express.json());
 
-const spotifyRoutes = require('./routes/spotify'); // ajuste o caminho se necessário
-
-app.use('/spotify', spotifyRoutes);
-
-// outras configurações e middlewares...
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+sequelize.authenticate().then(() => {
+  console.log('Conectado ao PostgreSQL');
+}).catch(err => {
+  console.error('Erro de conexão:', err);
 });
+
+
+app.use('/api/auth', authRoutes);
+
+const musicRoutes = require('./routes/musicRoutes');
+app.use('/api/musicas', musicRoutes);
+
+const artistRoutes = require('./routes/artistRoutes');
+app.use('/api/artista', artistRoutes);
+
+const adminRoutes = require('./routes/adminRoutes');
+app.use('/api/admin', adminRoutes);
+
+const musicRoutes = require('./routes/musicRoutes');
+app.use('/api/musicas', musicRoutes);
+
+app.use('/uploads', express.static('uploads'));
+
+
+module.exports = app;
+
+

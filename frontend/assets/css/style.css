@@ -62,7 +62,7 @@ body {
 
 .hero {
   position: relative;
-  height: 75vh; /* Reduzido de 100vh para 75vh */
+  height: 75vh;
   background-image: url('../img/festa.jpg');
   background-size: cover;
   background-position: center;
@@ -996,114 +996,128 @@ body {
   margin: 0 auto;
 }
 
-/* Card individual para cada faixa */
-.trackCard {
-  background-color: #181818;
-  border-radius: 16px;
-  padding: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Container principal da seção Spotify */
+.albumSpotify {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px 20px;
+  background-color: #121212;
+  color: white;
+}
+
+/* Card da playlist */
+.spotifyCard {
+  background-color: #1DB954;
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 350px;
+  width: 100%;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   text-align: center;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+/* Imagem da playlist */
+.spotifyImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+/* Título da playlist */
+.spotifyTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+/* Subtítulo */
+.spotifySubtitle {
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 16px;
+}
+
+/* Botão "Seguir" */
+.spotifyFollow {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* Botão "Play" grande */
+.spotifyPlay {
+  background-color: white;
+  color: #1DB954;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px auto 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.spotifyPlay:hover {
+  transform: scale(1.1);
+}
+
+/* Lista de músicas */
+.spotifyTracks {
+  width: 100%;
+  background-color: #181818;
+  border-radius: 16px;
+  padding: 16px;
   box-sizing: border-box;
 }
 
-.trackCard:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* Imagem da faixa (ex: capa) */
-.trackCard img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-/* Informação do track: título e artista */
-.trackInfo h3 {
-  font-size: 16px;
-  margin: 8px 0 4px;
-  color: #1DB954;
-}
-
-.trackInfo p {
+/* Itens da lista */
+.spotifyTrackItem {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
   font-size: 14px;
-  margin: 0 0 8px;
-  color: #ccc;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
 }
 
-/* Player de áudio */
-audio {
-  width: 100%;
-  outline: none;
-  border-radius: 8px;
-  background-color: #000;
+.spotifyTrackItem:last-child {
+  border-bottom: none;
 }
 
-/* Texto para faixas sem preview */
-.noPreview {
-  font-size: 13px;
-  color: #888;
-  margin-top: 8px;
+/* Nome e artista */
+.trackInfoText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-/* Responsividade básica */
-@media (max-width: 600px) {
-  .albumLink,
-  .trackCard {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .albumSpotify,
-  .playlistContainer {
-    padding: 20px 10px;
-    gap: 16px;
-  }
+.trackTitle {
+  font-weight: bold;
+  color: #ffffff;
 }
 
-.trackInfo {
-  width: 100%;
+.trackArtist {
+  font-size: 12px;
+  color: #bbbbbb;
 }
 
-.trackInfo h3 {
-  font-size: 18px;
-  margin: 8px 0 4px;
-  color: #1DB954; /* verde Spotify */
-  font-weight: 700;
-  text-shadow: 0 0 5px rgba(29, 185, 84, 0.7);
-  letter-spacing: 0.03em;
-}
-
-.trackInfo p {
-  font-size: 14px;
-  margin: 0 0 12px;
-  color: #b3b3b3; /* cinza claro */
-  font-weight: 400;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
-}
-
-.trackLyrics {
-  font-size: 13px;
-  color: #ddd;
-  font-style: normal;
-  line-height: 1.5;
-  max-height: 120px;
-  overflow-y: auto;
-  margin-top: 8px;
-  padding-right: 6px;
-}
-
-
-.trackLyrics::-webkit-scrollbar {
-  width: 6px;
-}
-
-.trackLyrics::-webkit-scrollbar-thumb {
-  background-color: #1DB954;
-  border-radius: 3px;
+/* Duração */
+.trackDuration {
+  font-size: 12px;
+  color: #bbbbbb;
 }
